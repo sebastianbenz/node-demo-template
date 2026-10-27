@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Demo</title>
+    <style>
+      body { font-family: system-ui, sans-serif; max-width: 40rem; margin: 4rem auto; padding: 0 1rem; line-height: 1.6; }
+      pre { background: #f4f4f4; padding: 1rem; border-radius: 6px; overflow: auto; }
+    </style>
+  </head>
+  <body>
+    <h1>It works 🎉</h1>
+    <p>This is a Node.js demo app deployed with Coolify.</p>
+    <p>Response from <code>/api/hello</code>:</p>
+    <pre id="out">loading…</pre>
+    <script>
+      fetch("/api/hello").then(r => r.json()).then(d => {
+        document.getElementById("out").textContent = JSON.stringify(d, null, 2);
+      });
+    </script>
+  </body>
+</html>
